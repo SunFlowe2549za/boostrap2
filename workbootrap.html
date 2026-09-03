@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Lab Assignment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Custom CSS Overriding Bootstrap Defaults -->
+    <style>
+        /* Override Bootstrap's primary button */
+        .btn-primary {
+            background-color: #6f42c1 !important; /* Custom Purple */
+            border-color: #6f42c1 !important;
+            border-radius: 50px; /* Pill shape */
+            padding: 8px 24px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .btn-primary:hover {
+            background-color: #59339d !important; /* Darker Purple on hover */
+            border-color: #59339d !important;
+            transform: translateY(-2px); /* Lift effect */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Custom styling for a specific section */
+        .features-section {
+            background-color: #f8f9fa;
+            border-top: 5px solid #6f42c1;
+            padding: 4rem 0;
+        }
+    </style>
+</head>
+<body>
+    
+ <!-- Component 1: Responsive Navbar -->
+ <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+ </nav>
+
+ <!-- Component 2: Hero section (Carousel) -->
+ <section class="hero-section">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1200/500?random=1" class="d-block w-100" alt="Slide 1">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h3>Welcome to Our Website</h3>
+            <p>Discover our features and services.</p>
+            <a href="#features" class="btn btn-primary">Get Started</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1200/500?random=2" class="d-block w-100" alt="Slide 2">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h3>Built with Bootstrap</h3>
+            <p>Responsive, modern components for your site.</p>
+            <a href="#features" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1200/500?random=3" class="d-block w-100" alt="Slide 3">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h3>Join Us Today</h3>
+            <p>Sign up and get started in minutes.</p>
+            <a href="#features" class="btn btn-primary">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+ </section>
+
+ <!-- Grid System & Component 3: Cards -->
+ <section id="features" class="features-section mt-5">
+    <div class="container">
+        <!-- Utility classes: text-center, mb-5 (margin bottom) -->
+        <h2 class="text-center mb-5 fw-bold">Our Core Features</h2>
+        
+        <!-- Grid implementation (row & col) -->
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <!-- Card Component with utility classes (h-100, shadow-sm, border-0) -->
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://picsum.photos/400/250?random=4" class="card-img-top" alt="Feature 1">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Responsive Design</h5>
+                        <p class="card-text text-muted">Looks great on desktops, tablets, and mobile devices using Bootstrap Grid.</p>
+                        <!-- Triggers Modal -->
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://picsum.photos/400/250?random=5" class="card-img-top" alt="Feature 2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Custom CSS</h5>
+                        <p class="card-text text-muted">Overriding default Bootstrap styles to create a unique and personalized look.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://picsum.photos/400/250?random=6" class="card-img-top" alt="Feature 3">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Multiple Components</h5>
+                        <p class="card-text text-muted">Utilizing Navbars, Carousels, Cards, and Modals to build a rich interface.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ </section>
+
+ <!-- Component 4: Modal -->
+ <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="infoModalLabel">Feature Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        This is a Bootstrap Modal component. It fulfills the requirement of adding interactive components to the site. You can put detailed text, forms, or images here.
+      </div>
+      <div class="modal-footer">
+        <!-- Utility classes: btn-secondary -->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+ </div>
+
+<div class="container my-5">
+    <div class="card border-primary shadow-sm">
+        <div class="card-header bg-primary text-white fw-bold fs-5">
+            Assignment Requirement: AI Log
+        </div>
+        <div class="card-body p-4">
+            <h6 class="fw-bold text-primary mb-2">Prompt Used:</h6>
+            <div class="bg-light p-3 rounded mb-4 border font-monospace text-muted text-break">
+            </div>
+            
+            <h6 class="fw-bold text-primary mb-3">Exactly what was changed and why:</h6>
+            <ul class="list-group list-group-flush border-top border-bottom">
+                <li class="list-group-item py-3">
+                    <strong>1. Built on the Bootstrap Grid (container/row/col):</strong> 
+                    สร้าง Section ใหม่ใต้ Carousel โดยใช้ <code>.container</code> และแบ่ง <code>.row</code> ออกเป็น 3 คอลัมน์ (<code>.col-md-4</code>) เพื่อให้จัดเรียงเนื้อหาได้อย่างเป็นระเบียบและรองรับ Responsive
+                </li>
+                <li class="list-group-item py-3">
+                    <strong>2. At least three components:</strong> 
+                    นอกจาก <code>Navbar</code> และ <code>Carousel</code> (ที่มีอยู่เดิม) ได้เพิ่ม <code>Cards</code> 3 ใบลงใน Grid และเพิ่ม <code>Modal</code> (Popup) ผูกเข้ากับปุ่มบน Card เพื่อให้หน้าเว็บมี Component เชิงโต้ตอบครบถ้วน
+                </li>
+                <li class="list-group-item py-3">
+                    <strong>3. Utility classes used:</strong> 
+                    ใช้คลาสอรรถประโยชน์ต่างๆ เช่น <code>mt-5</code>, <code>mb-5</code>, <code>text-center</code>, <code>shadow-sm</code>, <code>border-0</code> และ <code>h-100</code> เพื่อจัดการ Spacing, การจัดวางข้อความ และเพิ่มเงาให้สวยงามโดยไม่ต้องพึ่งพา Custom CSS มากเกินไป
+                </li>
+                <li class="list-group-item py-3">
+                    <strong>4. Custom CSS override:</strong> 
+                    เขียนโค้ด <code>&lt;style&gt;</code> ในส่วน Head เพื่อทำการ Override คลาส <code>.btn-primary</code> ของ Bootstrap โดยเปลี่ยนสีพื้นหลังเป็นสีม่วง (Custom color) ปรับขอบให้มน (Pill shape) และใส่ Animation เมื่อนำเมาส์ไปชี้ (Hover effect)
+                </li>
+                <li class="list-group-item py-3">
+                    <strong>5. An AI log:</strong> 
+                    เพิ่ม Card Component ชุดนี้ไว้ด้านล่างสุดของเว็บไซต์เพื่อบันทึก Prompts และสรุปสิ่งที่เปลี่ยนแปลงไป เพื่อให้ตรงตามเงื่อนไขของ Lab Assignment แบบ 100%
+                </li>
+            </ul>
+        </div>
+    </div>
+ </div>
